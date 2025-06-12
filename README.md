@@ -1,10 +1,5 @@
-# ICFP 2025 Artifact
-
-Name:    **Linear Types with Dynamic Multiplicities in Dependent Type Theory (Functional Pearl)**
-
-
-This folder contains the artefact accompanying the paper "Linear Types with
-Dynamic Multiplicities in Dependent Type Theory".
+This folder contains code accompanying the paper "Linear Types with Dynamic
+Multiplicities in Dependent Type Theory".
 
 The code has been type-checked with Agda in version 2.7.0.1 and the Cubical
 library version 0.8. The safe-flag was used for all files except those that

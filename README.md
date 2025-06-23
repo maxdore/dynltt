@@ -26,7 +26,7 @@ Further information on (and alternative ways to install) Agda can be found at
 
 The Cubical library in version 0.8 can be installed as follows:
 1. Download the library files from
-   `https://github.com/agda/cubical/releases/download/v0.8/cubical-0.8.tar.gz `
+   `https://github.com/agda/cubical/releases/download/v0.8/cubical-0.8.tar.gz`.
 2. Unpack the tarball and register it by creating a file `HOME/.agda/libraries`
    with contents `CUBICAL_DIR/cubical.agda-lib`.
 
@@ -38,7 +38,7 @@ Further information about Agda's library management can be found at
 
 All files can be checked by calling `make` (which runs Agda's typechecker on
 `Everything`, which includes most files part of the paper, and `Axiomatic`, an
-alternative implementation of the basic framework presented in the paper.
+alternative implementation of the basic framework presented in the paper).
 
 The files can be compiled into highlighted, hyperlinked web pages by calling
 `make html`. This will create an `html` folder, in which `Everything.html` is a
@@ -52,8 +52,6 @@ the latex backend of Agda, all definitions are hence called exactly the same as
 in the paper and should be easily traceable. The code files correspond to the
 different sections as follows:
 
-- `Everything` contains links to all files (except of `Axiomatic`, which does
-  not use the `cubical` mode)
 - `Base` contains the main setup of supplies and productions and the linear
   judgment which is explained in Sections 2.1-2.3.
 - `Lemmas` contains derivable rules from our system that we need in many
@@ -83,17 +81,17 @@ different sections as follows:
 - all files have the `safe` flag enabled except of `ListPartial`, `ISort`,
   `SSort` and `Conats` (and consequently also `Everything`). A few definitions
   in `ListPartial` and `Conats` give rise to partial functions, which is why we
-  had to turn off Agda's termination checker for these, more details can be
-  found in these definitions. In contrast, all programs in `ISort` and `SSort`
-  are easily seen to be terminating, but the structural recursion is on
-  arguments that are part of a pair, which is why Agda's termination checker
-  cannot recognise this fact. We have kept these versions of the programs
-  however since they are more legible and work together with the linear
-  functions in multiple arguments.
+  had to turn off Agda's termination checker for these. In contrast, all
+  programs in `ISort` and `SSort` are easily seen to be terminating, but the
+  structural recursion is on arguments that are part of a pair, which is why
+  Agda's termination checker cannot recognise this. We have kept these versions
+  of the programs (instead of uncurrying the functions) since they are more
+  legible and work more nicely together with the setup of linear functions in
+  multiple arguments.
 - the `guardedness` flag is enabled in `Conats` (and consequently also
-  `Everything`) to enable the use of coinductive data types.
+  `Everything`) to allow the use of coinductive data types.
 - we disabled the `UnsupportedIndexedMatch` warning in `Order` and `Vector`,
   which signals that some inductive types do not compute when applied to some
   primitives of `cubical` (namely transports). This does not happen in our
-  development and is of no concern for us.
+  development and is of no concern to us.
 
